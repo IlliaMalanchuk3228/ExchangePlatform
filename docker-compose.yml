@@ -1,0 +1,48 @@
+version: "3.4"
+
+networks:
+  internal:
+
+services:
+  web:
+    build:
+      context: ""
+      dockerfile: Dockerfile
+      args:
+        - NODE_ENV=production
+    container_name: heroku-dockerize-web
+    env_file:
+      - .env
+    volumes:
+      - .:/back
+      - /node_modules
+    command: npm start
+    depends_on:
+      - pg
+    networks:
+      - internal
+    ports:
+      - "3001:3001"
+    restart: always
+    environment:
+      NODE_ID: "1"
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/db
+      PORT: 3001
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:3001/auth" ]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+  pg:
+    image: postgres:11.2-alpine
+    container_name: pg
+    networks:
+      - internal
+    ports:
+      - "5432:5432"
+
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=db
