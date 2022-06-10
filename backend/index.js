@@ -16,7 +16,7 @@ fastify.register(require('point-of-view'), {
         ejs: require('ejs'),
     },
     includeViewExtension: true,
-    templates: './back/src/views',
+    templates: './backend/views',
 });
 
 //passport plugins
