@@ -10,10 +10,16 @@ Main Functionality:
 5) Chat support
 
 Technologies used for our project
+  
+  
+  
   Frontend:
     1) HTML + CSS;
     2) React;
     3) Figma;
+    
+    
+    
   Backend:
     1) Node.js;
     2) PostgreSQL;
