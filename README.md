@@ -9,7 +9,7 @@ Main Functionality:
 4) Various filter search
 5) Chat support
 
-Technologies used for our project
+# Technologies used for our project
   
   
   
@@ -24,3 +24,12 @@ Technologies used for our project
     1) Node.js;
     2) PostgreSQL;
     3) Fastify;
+
+# Components
+![image](https://user-images.githubusercontent.com/56121409/173224792-cc36c130-c2e6-4429-b6e0-dc5b337f903d.png)
+
+
+
+# ER-Diagram
+![image](https://user-images.githubusercontent.com/56121409/173224736-ce8dd0ac-83ae-4c28-b099-bc7e1084ade0.png)
+
